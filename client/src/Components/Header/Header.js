@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './Header.module.css'
+import LowerHeader from './LowerHeader';
 // icons
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
@@ -57,6 +58,7 @@ function Header() {
                     </div>
                 </div>
             </section>
+            <LowerHeader/>
         </>
     )
 }
