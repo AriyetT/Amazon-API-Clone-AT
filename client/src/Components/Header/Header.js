@@ -13,7 +13,8 @@ function Header() {
                 <div className={classes.header__container}>
                     <div className={classes.logo__container}>
                         {/* logo section*/}
-                    <a href="/"><img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" />
+                    <a href="/">
+                        <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" />
                     </a>
                      {/* delivery */}
                     <div className={classes.delivery}>
@@ -43,15 +44,15 @@ function Header() {
                             <option value="">EN</option>
                             </select>
                         </a>
-                        <a href="">
+                        <a href="/auth">
                             <p>Sign In</p>
                             <span>Account & Lists</span>
                         </a>
-                        <a href="">
+                        <a href="/orders">
                             <p>returns</p>
                             <span>& Orders</span>
                         </a>
-                        <a href="" className={classes.cart}>
+                        <a href="/cart" className={classes.cart}>
                         <BiCart size={35} />
                         <span>0</span>
                         </a>
