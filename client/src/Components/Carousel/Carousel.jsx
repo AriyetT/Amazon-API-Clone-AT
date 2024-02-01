@@ -17,7 +17,7 @@ function CarouselEffect() {
                     <img key={index} src={imageItemLink} alt={`Slide ${index}`} />
                 ))}
             </Carousel>
-            <div className={classes.hero__img}></div>
+            <div className={classes.hero__img}>       </div>
         </div>
     )
 }
