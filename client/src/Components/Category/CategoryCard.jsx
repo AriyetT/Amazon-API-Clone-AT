@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from '../Category/Category.module.css'
-// import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom';
 
 function CategoryCard({data}) {
   return (
@@ -10,9 +10,8 @@ function CategoryCard({data}) {
         <span>
           <h2>{data.title}</h2>
         </span>
-        <img src={data.imageLink} alt="" />
+        <img src={data.imageLink} alt="" /></a>
         <p>shop now</p>
-      </a>
     </div>
   )
 }
