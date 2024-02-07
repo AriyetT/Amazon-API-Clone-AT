@@ -1,36 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import classes from "./ProductDetail.module.css"
-import axios from 'axios';
-import LayOut from '../../Components/LayOut/LayOut'
+import React, { useEffect, useState } from 'react';
+import classes from './ProductDetail.module.css';
+import LayOut from '../../Component/LayOut/LayOut';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import { productUrl } from '../../Api/endPoints';
-import ProductCard from '../../Components/Products/Product.Cart';
-
+import ProductCard from '../../Component/Products/ProductCard';
+import Loader from '../../Component/Loader/Loader'; 
 
 function ProductDetail() {
-  const { productId } = useParams();
-  // console.log(productId) 
-  const [product, setProduct] = useState({});
+    const { productId } = useParams();
+    const [product, setProduct] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    axios.get(`${productUrl}products/${productId}`)
-        .then((res) => {
-          // console.log(res.data)
-            setProduct(res.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-}, [productId]);
+    useEffect(() => {
+        setIsLoading(true);
+        axios.get(`${productUrl}products/${productId}`)
+            .then((res) => {
+                setProduct(res.data);
+                setIsLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+                setIsLoading(false);
+            });
+    }, [productId]); 
 
-  return (
-    <LayOut>
-      <ProductCard
-      product={product}
-      />
-    </LayOut>
-    
-  )
+    return (
+        <LayOut>
+            {isLoading ? (<Loader />) : (<ProductCard product={product} flex={true} 
+            renderDesc={true}
+            renderAdd={true}
+            />)}
+        </LayOut>
+    );
 }
 
-export default ProductDetail
+export default ProductDetail;

@@ -1,13 +1,11 @@
 import React from 'react'
-import classes from "./Payment.module.css"
-import LayOut from '../../Components/LayOut/LayOut'
+import LayOut from '../../Component/LayOut/LayOut'
 
 function Payment() {
   return (
-    <LayOut>
-      <div>Payment</div>
+    <LayOut> 
+        <div>Payment</div>
     </LayOut>
-    
   )
 }
 
