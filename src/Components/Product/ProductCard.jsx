@@ -19,7 +19,7 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
         }
       })
     }
-  
+   
   return (
     <div  className={`${classes.card__container} ${flex?classes.product_flexed : ''}`}>
         <Link to={`/products/${id}`}>
@@ -44,12 +44,17 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
             {
               renderAdd && <button className={classes.button} onClick={addToCart}>
               add to cart
-              </button>
+              </button>  
             }
             
       </div>
     </div>
   )
-}
+} 
 
 export default ProductCard;
+
+
+// To https://github.com/AriyetT/Amazon2-API-Clone.git
+//  * [new branch]      main -> main
+// branch 'main' set up to track 'origin/main'.
