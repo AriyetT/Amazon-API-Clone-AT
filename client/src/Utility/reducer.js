@@ -19,7 +19,9 @@ export const reducer = (state, action) => {
         };
       } else {
         const updatedBasket = state.basket.map((item) =>
-          item.id === action.item.id ? { ...item, amount: item.amount + 1 } : item
+          item.id === action.item.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
         );
 
         return {
@@ -51,6 +53,11 @@ export const reducer = (state, action) => {
         ...state,
         basket: [],
       };
+    // case Type.EMPTY_BASKET:
+    //   return {
+    //     ...state,
+    //     basket: [],
+    //   };
     case Type.SET_USER:
       return {
         ...state,
